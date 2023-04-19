@@ -9,7 +9,7 @@ const app = Vue.createApp({
         placeholder: "Select a user",
         ajax: {
           url: "https://jsonplaceholder.typicode.com/users",
-          dataType: 'json',
+          dataType: 'json', 
           delay: 250,
           processResults: function (data) {
             return {
