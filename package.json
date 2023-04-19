@@ -8,6 +8,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "ci-test": "^0.1.11",
+    "test": "^3.3.0",
     "vue": "^3.2.47",
     "vue-toast-notification": "3.0"
   },
