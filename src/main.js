@@ -1,4 +1,4 @@
-import { createApp } from 'vue';
+import { createApp } from 'vue/dist/vue.esm-bundler.js';
 import { useToast } from 'vue-toast-notification';
 import 'vue-toast-notification/dist/theme-sugar.css';
 const $toast = useToast();

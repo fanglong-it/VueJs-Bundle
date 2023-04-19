@@ -1,4 +1,6 @@
-const app = Vue.createApp({
+import { createApp } from 'vue/dist/vue.esm-bundler.js';
+
+createApp({
     data() {
       return {
         selectedValues: []
@@ -27,9 +29,7 @@ const app = Vue.createApp({
         this.selectedValues = $('.js-example-placeholder-multiple').val();
       });
     }
-  });
-
-  app.mount('#app');
+  }).mount("#app");
   
   
   
