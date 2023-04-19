@@ -8,6 +8,11 @@
     "preview": "vite preview",
     "test": "node node_modules/jest/bin/jest.js --coverage"
   },
+  "jest": {
+    "testMatch": [
+      "**/tests/**/*.js"
+    ]
+  },
   "dependencies": {
     "vue": "^3.2.47",
     "vue-toast-notification": "3.0"
