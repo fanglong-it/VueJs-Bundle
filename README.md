@@ -33,5 +33,5 @@ npm run build
 
 
 # Note-Bundle
-See [Select-2](http://localhost:5173/src/select-2/select2-vuejs/html)
-See [Toast](http://localhost:5173/src/toasts/toast-vuejs.html)
+- See [Select-2](http://localhost:5173/src/select-2/select2-vuejs/html) <br />
+- See [Toast](http://localhost:5173/src/toasts/toast-vuejs.html)
