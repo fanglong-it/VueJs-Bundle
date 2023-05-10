@@ -1,0 +1,21 @@
+<script type="module">
+  import { createApp, ref} from 'https://unpkg.com/vue@3.2.47/dist/vue.esm-browser.js'
+  import ChildComp from './ChildComp.js'
+  createApp({
+    // register component
+    components: {
+      ChildComp
+    },
+    setup() {
+      const gretting = ref('Hello from parent')
+      return {
+        gretting
+      }
+    }
+  }).mount('#app')
+</script>
+
+<div id="app">
+  <!-- render child component -->
+  <child-comp :msg="gretting"></child-comp>
+</div>

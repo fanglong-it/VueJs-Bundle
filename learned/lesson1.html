@@ -1,0 +1,40 @@
+<script type="module">
+
+
+    import { createApp, ref, reactive } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
+
+    createApp({
+      setup() {
+        // component logic
+        // declare some reactive state here.
+       const counter = reactive({count:0})
+       const message = ref('Hello World!')
+
+        return {
+          // exposed to template
+          counter,message
+        }
+      }
+    }).mount('#app')
+
+    const counter = reactive({
+            count: 0
+        })
+        console.log(counter.count);
+        counter.count++;
+
+    const message = ref("Hello world!");
+    console.log(message.value);
+    message.value = "Changed";
+    console.log(message.value);
+
+
+    </script>
+    
+
+    <div id="app">
+      <h1>Make me dynamic!</h1>
+      <h1>{{message}}</h1>
+      <h1>{{counter.count}}</h1>
+      <h1>{{message.split('').reverse().join('')}}</h1>
+    </div>

@@ -1,0 +1,26 @@
+<script type="module">
+    import { createApp, ref } from 'https://unpkg.com/vue@3.2.47/dist/vue.esm-browser.js'
+    
+    createApp({
+      setup() {
+        const text = ref('')
+    
+        function onInput(e) {
+            //a v-on handler receives the native DOM event
+            //as the argument
+          text.value = e.target.value
+        }
+    
+        return {
+          text,
+          onInput
+        }
+      }
+    }).mount('#app')
+    </script>
+    
+    <div id="app">
+      <input :value="text" @input="onInput" placeholder="Type here">
+      <p>{{ text }}</p>
+      <input v-model="text">
+    </div>

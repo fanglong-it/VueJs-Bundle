@@ -1,0 +1,22 @@
+<script type="module">
+    import { createApp, ref } from 'https://unpkg.com/vue@3.2.47/dist/vue.esm-browser.js'
+    import ChildComp from './ChildComp.js'
+    
+    createApp({
+      components: {
+        ChildComp
+      },
+      setup() {
+        const childMsg = ref('No child msg yet')
+    
+        return {
+          childMsg
+        }
+      }
+    }).mount('#app')
+    </script>
+    
+    <div id="app">
+      <child-comp @response="(msg) => childMsg = msg"></child-comp>
+      <p>{{ childMsg }}</p>
+    </div>

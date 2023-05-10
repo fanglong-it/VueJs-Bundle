@@ -1,0 +1,33 @@
+<script type="module">
+    import { createApp, ref, watch } from 'https://unpkg.com/vue@3.2.47/dist/vue.esm-browser.js'
+    
+    createApp({
+      setup() {
+        const todoId = ref(1)
+        const todoData = ref(null)
+    
+        async function fetchData() {
+          todoData.value = null
+          const res = await fetch(
+            `https://jsonplaceholder.typicode.com/todos/${todoId.value}`
+          )
+          todoData.value = await res.json()
+        }
+        watch(todoId, fetchData)
+
+        fetchData()
+    
+        return {
+          todoId,
+          todoData
+        }
+      }
+    }).mount('#app')
+    </script>
+    
+    <div id="app">
+      <p>Todo id: {{ todoId }}</p>
+      <button @click="todoId++">Fetch next todo</button>
+      <p v-if="!todoData">Loading...</p>
+      <pre v-else>{{ todoData }}</pre>
+    </div>

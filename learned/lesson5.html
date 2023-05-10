@@ -1,0 +1,27 @@
+<script type="module">
+    import { createApp, ref } from 'https://unpkg.com/vue@3.2.47/dist/vue.esm-browser.js'
+    
+    createApp({
+      setup() {
+        const awesome = ref(true)
+    
+        function toggle() {
+
+            awesome.value = false;
+          // ...
+        }
+    
+        return {
+          awesome,
+          toggle
+        }
+      }
+    }).mount('#app')
+    </script>
+    
+    <div id="app">
+      <button @click="toggle">toggle</button>
+      
+      <h1 v-if="awesome">Vue is awesome!</h1>
+      <h1 v-else>Oh no 😢</h1>
+    </div>

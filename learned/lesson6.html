@@ -1,0 +1,48 @@
+<script type="module">
+    import { createApp, ref } from 'https://unpkg.com/vue@3.2.47/dist/vue.esm-browser.js'
+    
+    createApp({
+      setup() {
+        // give each todo a unique id
+        let id = 0
+    
+        const newTodo = ref('')
+        const todos = ref([
+          { id: id++, text: 'Learn HTML' },
+          { id: id++, text: 'Learn JavaScript' },
+          { id: id++, text: 'Learn Vue' }
+        ])
+    
+        function addTodo() {
+          // ...
+        
+          todos.value.push({id: id++, text: newTodo.value})
+        }
+    
+        function removeTodo(todo) {
+          // ...
+          todos.value = todos.value.filter((t) => t != todo)
+        }
+    
+        return {
+          newTodo,
+          todos,
+          addTodo,
+          removeTodo
+        }
+      }
+    }).mount('#app')
+    </script>
+    
+    <div id="app">
+      <form @submit.prevent="addTodo">
+        <input v-model="newTodo">
+        <button>Add Todo</button>    
+      </form>
+      <ul>
+        <li v-for="todo in todos" :key="todo.id">
+          {{ todo.text }}
+          <button @click="removeTodo(todo)">X</button>
+        </li>
+      </ul>
+    </div>

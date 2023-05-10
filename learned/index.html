@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VueJS</title>
+
+</head>
+
+<body>
+
+    <header>
+        <h1>Header</h1>
+    </header>
+
+    <div class="list-blog">
+        <p>Lorem ipsum dolor sit, amet consectetur ajdskfjl.</p>
+    </div>
+    <div id="app">
+        <p>{{title}}</p>
+    </div>
+
+    <div id="app2">
+        <button @click="count++">{{count}}</button>
+    </div>
+
+
+    <footer>
+        <h1>Footer</h1>
+    </footer>
+
+    <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
+
+    <script type="module">
+        import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
+
+        import MyComponent from './main.js'
+        createApp(MyComponent).mount('#app')
+
+        const app = createApp({
+            data() {
+                return {
+                    count: 0
+                }
+            }
+
+        })
+        app.mount("#app2")
+
+        app.config.errorHandler = (err) =>{
+            /* handler error*/
+        }
+
+        app.component('TodoDeleteButton', TodoDeleteButton)
+        
+        
+
+    </script>
+
+
+</body>
+<!-- <script src="main.js"></script> -->
+
+</html>

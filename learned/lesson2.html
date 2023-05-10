@@ -1,0 +1,17 @@
+<script type="module">
+    import { createApp, ref } from 'https://unpkg.com/vue@3.2.47/dist/vue.esm-browser.js'
+    
+    createApp({
+      setup() {
+        const titleClass = ref('title')
+        return {
+          titleClass
+        }
+      }
+    }).mount('#app')
+    </script>
+    
+    <link rel="stylesheet" href="./css/style.css">
+    <div id="app">
+      <h1 :class="titleClass">Make me red</h1> <!-- add dynamic class binding here -->
+    </div>

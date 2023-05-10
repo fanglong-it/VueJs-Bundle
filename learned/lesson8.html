@@ -1,0 +1,28 @@
+<script type="module">
+    import { createApp, ref , onMounted, onUpdated, onUnmounted} from 'https://unpkg.com/vue@3.2.47/dist/vue.esm-browser.js'
+    
+    createApp({
+      setup() {
+        const p = ref(null)
+        onMounted(()=>{
+            p.value.textContent = 'mounted!'
+            console.log('The component is now mounted.')
+        })
+
+        onUpdated(() => {
+            console.log('Updated')
+        })
+
+        onUnmounted(() => {
+        console.log('Unmounted')  
+        })
+        return {
+          p
+        }
+      }
+    }).mount('#app')
+    </script>
+    
+    <div id="app">
+      <p ref="p">hello</p>
+    </div>

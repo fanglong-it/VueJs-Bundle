@@ -1,0 +1,23 @@
+<script type="module">
+    import { createApp, ref } from 'https://unpkg.com/vue@3.2.47/dist/vue.esm-browser.js'
+    
+    createApp({
+      setup() {
+        const count = ref(0)
+    
+        function increment(e){
+            count.value++;
+        }
+
+        return {
+          count,
+          increment
+        }
+      }
+    }).mount('#app')
+    </script>
+    
+    <div id="app">
+      <!-- make this button work -->
+      <button v-on:click="increment">count is: {{ count }}</button>
+    </div>
