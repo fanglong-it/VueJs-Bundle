@@ -28,3 +28,8 @@ npm run dev
 npm run build
 ```
 # VueJs-Bundle
+
+
+# Note-Bundle
+select2: /src/select-2/select2-vuejs.html
+toast: /src/toasts/toast-vuejs.html
