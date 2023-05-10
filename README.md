@@ -1,5 +1,7 @@
 # vue-project
 
+[![Node.js CI](https://github.com/fanglong-it/VueJs-Bundle/actions/workflows/node.js.yml/badge.svg)](https://github.com/fanglong-it/VueJs-Bundle/actions/workflows/node.js.yml)
+
 This template should help get you started developing with Vue 3 in Vite.
 
 ## Recommended IDE Setup
